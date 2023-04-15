@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\UserJob;
 use App\Traits\ApiResponser;
 use DB;
 
@@ -18,7 +17,7 @@ Class UserController extends Controller {
     public function getUsers(){
     
     $users = DB::connection('mysql')
-    ->select("Select * from tbluser");
+    ->select("Select * from tblusers");
     
     return $this->successResponse($users);  
    
